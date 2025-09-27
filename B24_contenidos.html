@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B-24 Gestión de contenidos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container my-5">
+  <h2>Gestión de contenidos de la tienda</h2>
+
+  <!-- Sección de Banners -->
+  <div class="card shadow-sm my-4">
+    <div class="card-body">
+      <h5 class="card-title">Publicar banner promocional</h5>
+      <form>
+        <div class="mb-3">
+          <label for="imagenBanner" class="form-label">Imagen del banner</label>
+          <input type="file" id="imagenBanner" class="form-control" accept="image/*">
+        </div>
+        <div class="mb-3">
+          <label for="textoBanner" class="form-label">Texto promocional</label>
+          <input type="text" id="textoBanner" class="form-control" placeholder="Ej: ¡Oferta 2x1 en vinos!">
+        </div>
+        <button type="submit" class="btn btn-primary">Publicar banner</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lista de Banners Activos -->
+  <div class="card shadow-sm my-4">
+    <div class="card-body">
+      <h5 class="card-title">Banners activos</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img src="banner1.jpg" class="card-img-top" alt="Banner promocional">
+            <div class="card-body">
+              <p class="card-text">¡Oferta 2x1 en vinos!</p>
+              <button class="btn btn-sm btn-danger">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Noticias -->
+  <div class="card shadow-sm my-4">
+    <div class="card-body">
+      <h5 class="card-title">Publicar noticia</h5>
+      <form>
+        <div class="mb-3">
+          <label for="tituloNoticia" class="form-label">Título</label>
+          <input type="text" id="tituloNoticia" class="form-control" placeholder="Ej: Nuevo lanzamiento de vinos premium">
+        </div>
+        <div class="mb-3">
+          <label for="fechaNoticia" class="form-label">Fecha</label>
+          <input type="date" id="fechaNoticia" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="contenidoNoticia" class="form-label">Contenido</label>
+          <textarea id="contenidoNoticia" class="form-control" rows="4" placeholder="Escribe aquí la noticia..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Publicar noticia</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lista de Noticias Publicadas -->
+  <div class="card shadow-sm my-4">
+    <div class="card-body">
+      <h5 class="card-title">Noticias publicadas</h5>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h6>Nuevo lanzamiento de vinos premium</h6>
+          <small class="text-muted">26/09/2025</small>
+          <p>Presentamos nuestra nueva línea de vinos premium con descuentos especiales.</p>
+          <button class="btn btn-sm btn-danger">Eliminar</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

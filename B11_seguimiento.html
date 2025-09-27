@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B-11 Seguimiento de pedido</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-5" style="max-width: 700px;">
+    <h2>
+    <!-- Formulario para ingresar número de pedido -->
+    <form class="border p-4 bg-white rounded mb-4">
+      <div class="mb-3">
+        <label for="numPedido" class="form-label">Número de pedido</label>
+        <input type="text" id="numPedido" class="form-control" placeholder="Ej: #56789">
+      </div>
+      <button type="submit" class="btn btn-primary">Consultar estado</button>
+    </form>
+
+    <!-- Ejemplo de resultados -->
+    <div class="border p-3 bg-white rounded mb-3">
+      <h5>Estado actual: <span class="badge bg-info">En ruta hacia destino</span></h5>
+      <p><strong>Número de pedido:</strong> #56789</p>
+      <p><strong>Última actualización:</strong> 12/10/2025 - 14:32 hrs</p>
+    </div>
+
+    <!-- Otro ejemplo alternativo -->
+    <div class="border p-3 bg-white rounded">
+      <h5>Estado actual: <span class="badge bg-success">Entregado</span></h5>
+      <p><strong>Número de pedido:</strong> #12345</p>
+      <p><strong>Fecha de entrega:</strong> 10/10/2025</p>
+    </div>
+  </div>
+
+</body>
+</html>

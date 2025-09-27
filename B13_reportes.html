@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B-13 Reportes de ventas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-5" style="max-width: 800px;">
+    <h2>Generar reportes de ventas por periodo</h2>
+
+    <!-- Formulario de filtros -->
+    <form class="border p-4 bg-white rounded mb-4">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="tipoPeriodo" class="form-label">Periodo</label>
+          <select id="tipoPeriodo" class="form-select">
+            <option>Por día</option>
+            <option>Por semana</option>
+            <option>Por mes</option>
+            <option>Rango personalizado</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="fechaInicio" class="form-label">Fecha inicio</label>
+          <input type="date" id="fechaInicio" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label for="fechaFin" class="form-label">Fecha fin</label>
+          <input type="date" id="fechaFin" class="form-control">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <button type="submit" class="btn btn-primary">Generar reporte</button>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-outline-danger">Descargar PDF</button>
+          <button type="button" class="btn btn-outline-success">Descargar Excel</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Ejemplo de reporte generado -->
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <h5 class="mb-3">Reporte de ventas — Enero 2025</h5>
+        <div class="row text-center">
+          <div class="col-md-4 mb-3">
+            <div class="p-3 bg-light border rounded">
+              <h6>Total ventas</h6>
+              <p class="fs-5 fw-bold">$ 25.300.000</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="p-3 bg-light border rounded">
+              <h6>N° pedidos</h6>
+              <p class="fs-5 fw-bold">1.245</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="p-3 bg-light border rounded">
+              <h6>Promedio por venta</h6>
+              <p class="fs-5 fw-bold">$ 20.320</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-muted mb-0"><small>Generado el 01/02/2025 — Administrador</small></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

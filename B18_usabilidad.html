@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B-18 Pruebas de usabilidad móviles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-5" style="max-width: 900px;">
+    <h2 class="mb-4">Pruebas de usabilidad en móviles</h2>
+
+    <!-- Filtros de prueba -->
+    <form class="border p-4 bg-white rounded shadow-sm mb-4">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="dispositivo" class="form-label">Dispositivo</label>
+          <select id="dispositivo" class="form-select">
+            <option selected>Seleccione...</option>
+            <option>iOS</option>
+            <option>Android</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="tipoPrueba" class="form-label">Tipo de prueba</label>
+          <select id="tipoPrueba" class="form-select">
+            <option selected>Seleccione...</option>
+            <option>Tiempo de carga</option>
+            <option>Legibilidad</option>
+            <option>Interacción táctil</option>
+          </select>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end mt-4">
+        <button type="submit" class="btn btn-primary">Ejecutar prueba</button>
+      </div>
+    </form>
+
+    <!-- Resultados -->
+    <div class="row g-3">
+      <div class="col-md-4 d-flex">
+        <div class="card flex-fill border-0 shadow-sm text-center p-3">
+          <h6 class="mb-2">Tiempo de carga</h6>
+          <p class="display-6 text-success">2.8s</p>
+          <small class="text-muted">Objetivo: &lt; 3s</small>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="card flex-fill border-0 shadow-sm text-center p-3">
+          <h6 class="mb-2">Legibilidad</h6>
+          <p class="display-6 text-primary">95%</p>
+          <small class="text-muted">Objetivo: ≥ 90%</small>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="card flex-fill border-0 shadow-sm text-center p-3">
+          <h6 class="mb-2">Interacción táctil</h6>
+          <p class="display-6 text-success">✔</p>
+          <small class="text-muted">Botones responden correctamente</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+</body>
+</html>

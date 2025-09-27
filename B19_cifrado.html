@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B-19 Cifrado de contraseñas y datos sensibles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-5" style="max-width: 900px;">
+    <h2 class="mb-4">Cifrado de contraseñas y datos sensibles</h2>
+
+    <!-- Formulario de prueba -->
+    <form class="border p-4 bg-white rounded shadow-sm mb-4">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="password" class="form-label">Contraseña de prueba</label>
+          <input type="password" id="password" class="form-control" placeholder="Ingrese contraseña">
+        </div>
+        <div class="col-md-6">
+          <label for="dato" class="form-label">Dato sensible</label>
+          <input type="text" id="dato" class="form-control" placeholder="Ej: dirección, teléfono">
+        </div>
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col-md-6">
+          <label for="algoritmo" class="form-label">Algoritmo de cifrado</label>
+          <select id="algoritmo" class="form-select">
+            <option selected>Seleccione...</option>
+            <option>bcrypt</option>
+            <option>AES</option>
+            <option>SHA-256</option>
+          </select>
+        </div>
+        <div class="col-md-6 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">Cifrar datos</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Resultados de cifrado -->
+    <div class="row g-3">
+      <div class="col-md-6 d-flex">
+        <div class="card flex-fill border-0 shadow-sm">
+          <div class="card-body">
+            <h6 class="card-title">Contraseña cifrada</h6>
+            <p class="text-muted mb-1">Entrada: <code>Clave2025</code></p>
+            <p class="text-success small mb-0">Resultado: $2a$12$Xk92L8Yj... (bcrypt)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex">
+        <div class="card flex-fill border-0 shadow-sm">
+          <div class="card-body">
+            <h6 class="card-title">Dato sensible cifrado</h6>
+            <p class="text-muted mb-1">Entrada: <code>Calle Falsa 123</code></p>
+            <p class="text-success small mb-0">Resultado: U2FsdGVkX1/92... (AES)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
