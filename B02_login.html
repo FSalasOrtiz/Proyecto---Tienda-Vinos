@@ -8,9 +8,10 @@
 </head>
 <body class="bg-light">
 
-  <div class="container my-5">
-    <h2>Inicio de sesión</h2>
-    <form class="border p-4 bg-white rounded">
+  <div class="container my-5" style="max-width: 400px;">
+    <h2 class="mb-4 text-center">Inicio de sesión</h2>
+    
+    <form class="border p-4 bg-white rounded shadow-sm">
       <div class="mb-3">
         <label for="loginEmail" class="form-label">Correo electrónico</label>
         <input type="email" id="loginEmail" class="form-control" placeholder="cliente@vinaurbana.cl">
@@ -19,7 +20,13 @@
         <label for="loginPass" class="form-label">Contraseña</label>
         <input type="password" id="loginPass" class="form-control">
       </div>
-      <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+      <button type="submit" class="btn btn-primary w-100 mb-3">Iniciar Sesión</button>
+
+      <!-- Botones de registro y recuperación -->
+      <div class="d-flex justify-content-between">
+        <a href="B01_registro.html" class="btn btn-outline-secondary btn-sm">Registrar usuario</a>
+        <a href="B03_recuperar.html" class="btn btn-link btn-sm">¿Olvidaste tu contraseña?</a>
+      </div>
     </form>
   </div>
 
