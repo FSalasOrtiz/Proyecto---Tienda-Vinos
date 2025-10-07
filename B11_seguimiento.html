@@ -8,15 +8,25 @@
 </head>
 <body class="bg-light">
 
+  <!-- Encabezado con botón de inicio -->
+  <header class="bg-white shadow-sm py-3 mb-4">
+    <div class="container d-flex justify-content-start">
+      <a href="index.html" class="btn btn-outline-primary fw-bold px-4">
+        ← Volver al inicio
+      </a>
+    </div>
+  </header>
+
   <div class="container my-5" style="max-width: 700px;">
-    <h2>
+    <h2 class="mb-4 text-center">Seguimiento de pedido</h2>
+
     <!-- Formulario para ingresar número de pedido -->
     <form class="border p-4 bg-white rounded mb-4">
       <div class="mb-3">
         <label for="numPedido" class="form-label">Número de pedido</label>
         <input type="text" id="numPedido" class="form-control" placeholder="Ej: #56789">
       </div>
-      <button type="submit" class="btn btn-primary">Consultar estado</button>
+      <button type="submit" class="btn btn-primary w-100">Consultar estado</button>
     </form>
 
     <!-- Ejemplo de resultados -->

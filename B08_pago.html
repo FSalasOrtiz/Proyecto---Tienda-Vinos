@@ -3,13 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B-08 Procesar pago en línea</title>
+  <title>B08: Procesar pago en línea</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilo de tarjeta simulada */
+    .card-tarjeta {
+      width: 100%;
+      height: 180px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #4b2e83, #a06cd5);
+      color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .card-tarjeta p {
+      margin: 0;
+    }
+    .card-tarjeta .numero {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      margin-top: 30px;
+    }
+    .card-tarjeta .titular {
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body class="bg-light">
 
   <div class="container my-5" style="max-width: 600px;">
     <h2>Procesar pago en línea</h2>
+
+    <!-- Tarjeta simulada -->
+    <div class="card-tarjeta">
+      <p>VINA URBANA</p>
+      <p class="numero">0000 0000 0000 0000</p>
+      <p class="titular">TITULAR: NOMBRE APELLIDO</p>
+    </div>
 
     <!-- Resumen del pedido -->
     <div class="border rounded p-3 bg-white mb-4">
@@ -19,34 +51,38 @@
     </div>
 
     <!-- Formulario de pago -->
-    <form class="border p-4 bg-white rounded">
+    <form id="formPago" class="border p-4 bg-white rounded">
       <div class="mb-3">
         <label class="form-label">Número de tarjeta</label>
-        <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
+        <input type="text" class="form-control" placeholder="0000 0000 0000 0000" required>
       </div>
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">Fecha de expiración</label>
-          <input type="text" class="form-control" placeholder="MM/AA">
+          <input type="text" class="form-control" placeholder="MM/AA" required>
         </div>
         <div class="col-md-6 mb-3">
           <label class="form-label">CVV</label>
-          <input type="password" class="form-control" placeholder="123">
+          <input type="password" class="form-control" placeholder="123" required>
         </div>
       </div>
       <div class="mb-3">
         <label class="form-label">Nombre del titular</label>
-        <input type="text" class="form-control" placeholder="Nombre como aparece en la tarjeta">
+        <input type="text" class="form-control" placeholder="Nombre como aparece en la tarjeta" required>
       </div>
       <button type="submit" class="btn btn-success w-100">Pagar ahora</button>
     </form>
-
-    <!-- Mensajes simulados -->
-    <div class="mt-4">
-      <div class="alert alert-success">Pago exitoso</div>
-      <div class="alert alert-danger">Pago rechazado, intente nuevamente</div>
-    </div>
   </div>
+
+  <script>
+    // Simular redirección al pagar
+    document.getElementById('formPago').addEventListener('submit', function(event) {
+      event.preventDefault(); // evitar recarga
+      alert("Pago procesado con éxito ✅");
+      window.location.href = "B09_boleta.html"; // redirige a la boleta
+    });
+  </script>
 
 </body>
 </html>
+
