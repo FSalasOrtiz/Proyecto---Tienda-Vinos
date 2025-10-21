@@ -3,16 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B-10 Confirmar pedido y asignar a despacho</title>
+  <title>B-10 Confirmar pedido | Viña Urbana</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at top, #1a1a1a 0%, #0b0b0b 100%);
+      color: #f2f2f2;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(0,0,0,0.85);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      height: 55px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.08);
+    }
+
+    h2 {
+      color: #f8e4c9;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(184, 138, 68, 0.4);
+    }
+
+    .card-container {
+      background: linear-gradient(160deg, #2a1a1a, #3d2323);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 25px rgba(184, 138, 68, 0.15);
+      border: 1px solid rgba(184, 138, 68, 0.3);
+      margin-bottom: 25px;
+    }
+
+    .btn-custom {
+      background-color: #b88a44;
+      color: #111;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 10px 20px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #d4a85a;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .alert-custom {
+      background-color: rgba(184, 138, 68, 0.15);
+      color: #f8f3ee;
+      border: 1px solid rgba(184,138,68,0.3);
+    }
+  </style>
 </head>
-<body class="bg-light">
+<body>
+
+  <!-- Encabezado con logo -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo_vinaurbana.png" alt="Logo Viña Urbana" class="logo">
+    </a>
+  </header>
 
   <div class="container my-5" style="max-width: 700px;">
     <h2>Confirmar pedido y asignar a despacho</h2>
 
     <!-- Confirmación exitosa -->
-    <div class="border rounded p-4 bg-white mb-4">
+    <div class="card-container">
       <h5>¡Tu pedido ha sido confirmado!</h5>
       <p><strong>Número de pedido:</strong> #56789</p>
       <p><strong>Fecha estimada de entrega:</strong> 15/10/2025</p>
@@ -20,15 +92,15 @@
     </div>
 
     <!-- Caso alternativo: error -->
-    <div class="alert alert-danger mb-4">
+    <div class="alert alert-custom">
       Ocurrió un error al asignar tu pedido al despacho.  
       El pedido ha quedado en <strong>revisión manual</strong>.  
       Nuestro equipo lo revisará y te notificará a la brevedad.
     </div>
 
     <!-- Botón Activar notificaciones automáticas -->
-    <div class="text-center">
-      <a href="B12_notificaciones_automatica.html" class="btn btn-primary btn-lg">
+    <div class="text-center mt-4">
+      <a href="B12_notificaciones_automatica.html" class="btn btn-custom btn-lg">
         🔔 Activar notificaciones automáticas
       </a>
     </div>
@@ -36,3 +108,4 @@
 
 </body>
 </html>
+

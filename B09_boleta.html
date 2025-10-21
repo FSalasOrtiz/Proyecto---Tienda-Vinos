@@ -3,28 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B09: Recibir boleta digital</title>
+  <title>B09: Recibir boleta digital | Viña Urbana</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+  <style>
+    body {
+      background: radial-gradient(circle at top, #1a1a1a 0%, #0b0b0b 100%);
+      color: #f2f2f2;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+    }
 
-  <!-- Encabezado con dos botones -->
-  <header class="bg-white shadow-sm py-3 mb-4">
-    <div class="container d-flex justify-content-between align-items-center">
-      <a href="index.html" class="btn btn-outline-primary fw-bold px-4">
-        🏠 Inicio
-      </a>
-      <a href="index.html" class="btn btn-outline-secondary fw-bold px-4">
-        ← Volver al inicio
-      </a>
-    </div>
+    header {
+      background-color: rgba(0,0,0,0.85);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      height: 55px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.08);
+    }
+
+    h2 {
+      color: #f8e4c9;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(184, 138, 68, 0.4);
+    }
+
+    .card-container {
+      background: linear-gradient(160deg, #2a1a1a, #3d2323);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 25px rgba(184, 138, 68, 0.15);
+      border: 1px solid rgba(184, 138, 68, 0.3);
+      margin-bottom: 25px;
+    }
+
+    .btn-custom {
+      background-color: #b88a44;
+      color: #111;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 10px 20px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #d4a85a;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .alert-custom {
+      background-color: rgba(184, 138, 68, 0.15);
+      color: #f8f3ee;
+      border: 1px solid rgba(184,138,68,0.3);
+    }
+
+    .alert-warning-custom {
+      background-color: rgba(184, 138, 68, 0.1);
+      color: #f8f3ee;
+      border: 1px solid rgba(184,138,68,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado con logo -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo_vinaurbana.png" alt="Logo Viña Urbana" class="logo">
+    </a>
   </header>
 
   <div class="container my-5" style="max-width: 700px;">
     <h2>Recibir boleta digital</h2>
 
     <!-- Confirmación de compra -->
-    <div class="border rounded p-4 bg-white mb-4">
+    <div class="card-container">
       <h5>¡Gracias por tu compra!</h5>
       <p>Tu transacción ha sido procesada con éxito.</p>
       <p><strong>Número de orden:</strong> #12345</p>
@@ -32,19 +98,19 @@
     </div>
 
     <!-- Mensaje de boleta enviada -->
-    <div class="alert alert-success">
+    <div class="alert alert-custom mb-3">
       La boleta digital ha sido enviada a tu correo: <strong>cliente@ejemplo.com</strong>
     </div>
 
     <!-- Caso alternativo: error de envío -->
-    <div class="alert alert-warning mb-4">
+    <div class="alert alert-warning-custom mb-4">
       No pudimos entregar la boleta a tu correo.  
-      <a href="#" class="btn btn-outline-primary btn-sm">Descargar boleta en PDF</a>
+      <a href="#" class="btn btn-custom btn-sm">Descargar boleta en PDF</a>
     </div>
 
     <!-- Botón Continuar -->
-    <div class="text-center">
-      <a href="B10_confirmar_pedido.html" class="btn btn-success btn-lg">Continuar</a>
+    <div class="text-center mt-4">
+      <a href="B10_confirmar_pedido.html" class="btn btn-custom btn-lg">Continuar</a>
     </div>
   </div>
 

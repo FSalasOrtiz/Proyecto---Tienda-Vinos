@@ -3,86 +3,218 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B08: Procesar pago en línea</title>
+  <title>B08 – Pago en línea | Viña Urbana</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Estilo de tarjeta simulada */
+    body {
+      background: radial-gradient(circle at top, #1a1a1a 0%, #0b0b0b 100%);
+      color: #f8f3ee;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .logo {
+      height: 55px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.08);
+    }
+
+    .btn-header {
+      background-color: #b88a44;
+      color: #111;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      padding: 8px 18px;
+      transition: all 0.3s;
+    }
+
+    .btn-header:hover {
+      background-color: #d4a85a;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    h2 {
+      color: #f8e4c9;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(184, 138, 68, 0.4);
+    }
+
     .card-tarjeta {
       width: 100%;
       height: 180px;
       border-radius: 15px;
-      background: linear-gradient(135deg, #4b2e83, #a06cd5);
-      color: white;
+      background: linear-gradient(135deg, #6b3f2c, #b88a44);
+      color: #fef9f3;
       padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(184, 138, 68, 0.25);
+      border: 1px solid rgba(184, 138, 68, 0.3);
+      font-family: "Courier New", monospace;
     }
-    .card-tarjeta p {
-      margin: 0;
-    }
+    .card-tarjeta p { margin: 0; }
     .card-tarjeta .numero {
       font-size: 1.2rem;
       letter-spacing: 3px;
       margin-top: 30px;
     }
-    .card-tarjeta .titular {
-      margin-top: 40px;
+    .card-tarjeta .titular,
+    .card-tarjeta .fecha {
+      margin-top: 20px;
       font-size: 0.9rem;
+    }
+
+    .section-container {
+      background: linear-gradient(160deg, #2a1a1a, #3d2323);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 25px rgba(184, 138, 68, 0.15);
+      border: 1px solid rgba(184, 138, 68, 0.3);
+      color: #f2f2f2;
+    }
+
+    .form-control {
+      background-color: rgba(255,255,255,0.08);
+      border: 1px solid rgba(184,138,68,0.4);
+      color: #f8f3ee;
+    }
+
+    .form-control::placeholder {
+      color: rgba(248, 243, 238, 0.5);
+    }
+
+    .form-control:focus {
+      border-color: #d4a85a;
+      background-color: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    .btn-success {
+      background-color: #b88a44;
+      border: none;
+      color: #111;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-success:hover {
+      background-color: #d4a85a;
+      color: #000;
+      transform: scale(1.03);
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+      font-size: 0.9em;
+      border-top: 1px solid rgba(184, 138, 68, 0.3);
     }
   </style>
 </head>
-<body class="bg-light">
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo_vinaurbana.png" alt="Logo Viña Urbana" class="logo">
+    </a>
+    <a href="B07_carro.html" class="btn-header">← Volver al carrito</a>
+  </header>
 
   <div class="container my-5" style="max-width: 600px;">
     <h2>Procesar pago en línea</h2>
 
     <!-- Tarjeta simulada -->
     <div class="card-tarjeta">
-      <p>VINA URBANA</p>
-      <p class="numero">0000 0000 0000 0000</p>
-      <p class="titular">TITULAR: NOMBRE APELLIDO</p>
+      <p>VIÑA URBANA</p>
+      <p class="numero" id="tarjeta-numero">0000 0000 0000 0000</p>
+      <p class="titular" id="tarjeta-titular">TITULAR: NOMBRE APELLIDO</p>
+      <p class="fecha" id="tarjeta-fecha">MM/AA</p>
     </div>
 
-    <!-- Resumen del pedido -->
-    <div class="border rounded p-3 bg-white mb-4">
-      <h5>Resumen de compra</h5>
+    <!-- Resumen de compra -->
+    <div class="section-container mb-4">
+      <h5 class="mb-2">Resumen de compra</h5>
       <p>3 productos seleccionados</p>
       <p><strong>Total: $28.970</strong></p>
     </div>
 
     <!-- Formulario de pago -->
-    <form id="formPago" class="border p-4 bg-white rounded">
+    <form id="formPago" class="section-container">
       <div class="mb-3">
         <label class="form-label">Número de tarjeta</label>
-        <input type="text" class="form-control" placeholder="0000 0000 0000 0000" required>
+        <input type="text" id="input-numero" class="form-control" placeholder="0000 0000 0000 0000" required maxlength="19">
       </div>
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">Fecha de expiración</label>
-          <input type="text" class="form-control" placeholder="MM/AA" required>
+          <input type="text" id="input-fecha" class="form-control" placeholder="MM/AA" required maxlength="5">
         </div>
         <div class="col-md-6 mb-3">
           <label class="form-label">CVV</label>
-          <input type="password" class="form-control" placeholder="123" required>
+          <input type="password" class="form-control" placeholder="123" required maxlength="3">
         </div>
       </div>
       <div class="mb-3">
         <label class="form-label">Nombre del titular</label>
-        <input type="text" class="form-control" placeholder="Nombre como aparece en la tarjeta" required>
+        <input type="text" id="input-titular" class="form-control" placeholder="Nombre como aparece en la tarjeta" required>
       </div>
-      <button type="submit" class="btn btn-success w-100">Pagar ahora</button>
+      <button type="submit" class="btn btn-success w-100 mt-3">💳 Pagar ahora</button>
     </form>
   </div>
 
+  <footer>
+    <p>&copy; 2025 Viña Urbana – Vinos Boutique | Todos los derechos reservados.</p>
+  </footer>
+
   <script>
-    // Simular redirección al pagar
+    const inputNumero = document.getElementById('input-numero');
+    const inputTitular = document.getElementById('input-titular');
+    const inputFecha = document.getElementById('input-fecha');
+
+    const tarjetaNumero = document.getElementById('tarjeta-numero');
+    const tarjetaTitular = document.getElementById('tarjeta-titular');
+    const tarjetaFecha = document.getElementById('tarjeta-fecha');
+
+    inputNumero.addEventListener('input', () => {
+      let val = inputNumero.value.replace(/\D/g, '').slice(0,16);
+      val = val.replace(/(.{4})/g, '$1 ').trim();
+      tarjetaNumero.textContent = val || '0000 0000 0000 0000';
+    });
+
+    inputTitular.addEventListener('input', () => {
+      tarjetaTitular.textContent = inputTitular.value ? `TITULAR: ${inputTitular.value.toUpperCase()}` : 'TITULAR: NOMBRE APELLIDO';
+    });
+
+    inputFecha.addEventListener('input', () => {
+      let val = inputFecha.value.replace(/\D/g, '').slice(0,4);
+      if(val.length >= 3) val = val.slice(0,2) + '/' + val.slice(2);
+      tarjetaFecha.textContent = val || 'MM/AA';
+    });
+
     document.getElementById('formPago').addEventListener('submit', function(event) {
-      event.preventDefault(); // evitar recarga
+      event.preventDefault();
       alert("Pago procesado con éxito ✅");
-      window.location.href = "B09_boleta.html"; // redirige a la boleta
+      window.location.href = "B09_boleta.html";
     });
   </script>
 
 </body>
 </html>
-

@@ -3,47 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B-12 Notificaciones automáticas</title>
+  <title>B-12 Notificaciones automáticas | Viña Urbana</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+  <style>
+    body {
+      background: radial-gradient(circle at top, #1a1a1a 0%, #0b0b0b 100%);
+      color: #f2f2f2;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+    }
 
-  <!-- Encabezado con botón de inicio -->
-  <header class="bg-white shadow-sm py-3 mb-4">
-    <div class="container d-flex justify-content-start align-items-center">
-      <a href="index.html" class="btn btn-outline-primary fw-bold px-4">
-        🏠 Inicio
-      </a>
-    </div>
+    header {
+      background-color: rgba(0,0,0,0.85);
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      height: 55px;
+      transition: transform 0.3s ease;
+      margin-right: 20px;
+    }
+
+    h2 {
+      color: #f8e4c9;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(184, 138, 68, 0.4);
+    }
+
+    .card-notificacion {
+      background: linear-gradient(160deg, #2a1a1a, #3d2323);
+      border: 1px solid rgba(184,138,68,0.3);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(184,138,68,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-notificacion:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(212,168,90,0.25);
+    }
+
+    .badge-custom {
+      background-color: #b88a44;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .badge-custom.entregado {
+      background-color: #d4a85a;
+      color: #111;
+    }
+
+    p {
+      margin-bottom: 8px;
+    }
+
+    small {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado con logo -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo_vinaurbana.png" alt="Logo Viña Urbana" class="logo">
+    </a>
   </header>
 
   <div class="container my-5" style="max-width: 700px;">
     <h2>Notificaciones automáticas de estado</h2>
 
     <!-- Notificación: Confirmación -->
-    <div class="card border-0 shadow-sm mb-3">
-      <div class="card-body d-flex flex-column">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <h5 class="mb-0">Notificación por correo</h5>
-          <span class="badge bg-primary">Confirmado</span>
-        </div>
-        <p><strong>Número de pedido:</strong> #12345</p>
-        <p>Tu pedido fue confirmado correctamente y ya está registrado en el sistema.</p>
-        <p class="text-muted mb-0"><small>Enviado el: 12/10/2025 – 10:15 hrs</small></p>
+    <div class="card-notificacion">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Notificación por correo</h5>
+        <span class="badge badge-custom">Confirmado</span>
       </div>
+      <p><strong>Número de pedido:</strong> #12345</p>
+      <p>Tu pedido fue confirmado correctamente y ya está registrado en el sistema.</p>
+      <p class="mb-0"><small>Enviado el: 12/10/2025 – 10:15 hrs</small></p>
     </div>
 
     <!-- Notificación: Entregado -->
-    <div class="card border-0 shadow-sm">
-      <div class="card-body d-flex flex-column">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <h5 class="mb-0">Notificación por correo</h5>
-          <span class="badge bg-success">Entregado</span>
-        </div>
-        <p><strong>Número de pedido:</strong> #6789</p>
-        <p>Tu pedido ha sido entregado exitosamente. Gracias por tu compra.</p>
-        <p class="text-muted mb-0"><small>Enviado el: 15/10/2025 – 18:20 hrs</small></p>
+    <div class="card-notificacion">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Notificación por correo</h5>
+        <span class="badge badge-custom entregado">Entregado</span>
       </div>
+      <p><strong>Número de pedido:</strong> #6789</p>
+      <p>Tu pedido ha sido entregado exitosamente. Gracias por tu compra.</p>
+      <p class="mb-0"><small>Enviado el: 15/10/2025 – 18:20 hrs</small></p>
     </div>
   </div>
 
